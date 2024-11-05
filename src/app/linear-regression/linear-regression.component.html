@@ -1,1 +1,25 @@
-<p>linear-regression works!</p>
+<div class="componente_contenido">
+    <h3>linear-regression</h3>
+    <div class="zona_input_1 modificacion_1">
+        <input type="text" class="input_generico modificacion_2" [(ngModel)]="numerosX"
+            placeholder="Ej: 130, 650, 99, 150, 128, 302, 95, 945, 368, 961">
+        <input type="text" class="input_generico modificacion_2" [(ngModel)]="numerosY"
+            placeholder="Ej: 186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601">
+    </div>
+    <div>
+        <button (click)="calcularRegression()" class="boton_calcular">Calcular</button>
+    </div>
+    <div class="linear_regression_comodin_blanco" *ngIf="!resultado1"></div>
+    <div *ngIf="resultado1">
+        <div class="respuesta">B0: {{resultado1.B0}}</div>
+
+        <div class="respuesta">B1: {{resultado1.B1}}</div>
+    </div>
+    <div class="zona_input_1">
+        <input type="text" class="input_generico" [(ngModel)]="numeroX" placeholder="Ej: 386">
+    </div>
+    <div>
+        <button (click)="calcularPredict()" class="boton_calcular">Calcular</button>
+    </div>
+    <div class="respuesta" *ngIf="resultado2">{{resultado2}}</div>
+</div>

@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+    padding: 0;
+    margin: 0;
+    background: #ffe8ff;
+    ;
+}
+
+
+.no_link {
+    text-decoration: none;
+    color: black;
+}
+
+.input_generico {
+    border-radius: 9px;
+    padding: 3px;
+    text-align: center;
+}
+
+.componente_contenido {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.boton_calcular {
+    background: #f2b2f1;
+    border-radius: 9px;
+    border: 1px solid #000000;
+}
+
+.respuesta {
+    height: 24px;
+    margin: 7px 0px;
+}
+
+.zona_input_1 {
+    margin-bottom: 8px;
+}

@@ -1,1 +1,16 @@
-<p>correlation works!</p>
+<div class="componente_contenido">
+    <h3>correlation</h3>
+    <div class="zona_input_1 modificacion_1">
+        <input type="text" class="input_generico modificacion_2" [(ngModel)]="numerosX"
+            placeholder="Ej: 130, 650, 99, 150, 128, 302, 95, 945, 368, 961">
+        <input type="text" class="input_generico modificacion_2" [(ngModel)]="numerosY"
+            placeholder="Ej: 15.0, 69.9, 6.5, 22.4, 28.4, 65.9, 19.4, 198.7, 38.8, 138.2">
+    </div>
+    <div>
+        <button (click)="calcular()" class="boton_calcular">Calcular</button>
+    </div>
+    <div *ngIf="resultado">
+        <div class="respuesta">{{resultado.r}}</div>
+        <div class="respuesta">{{resultado.rr}}</div>
+    </div>
+</div>
