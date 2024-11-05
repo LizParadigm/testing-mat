@@ -55,5 +55,3 @@ export function oneOverX(x: number): number {
 //         return Math.sqrt(2 * pi / x) * Math.pow(x / Math.E, x);
 //     }
 // }
-
-
