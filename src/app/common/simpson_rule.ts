@@ -40,20 +40,20 @@ export function oneOverX(x: number): number {
 
 
 
-function gamma(x: number): number {
-    // Γ(x) = (x - 1)!
-    if (Number.isInteger(x)) {
-        let result = 1;
-        for (let i = 1; i < x; i++) {
-            result *= i;
-        }
-        return result;
-    }
-    // aproximación de Stirling
-    else {
-        const pi = Math.PI;
-        return Math.sqrt(2 * pi / x) * Math.pow(x / Math.E, x);
-    }
-}
+// function gamma(x: number): number {
+//     // Γ(x) = (x - 1)!
+//     if (Number.isInteger(x)) {
+//         let result = 1;
+//         for (let i = 1; i < x; i++) {
+//             result *= i;
+//         }
+//         return result;
+//     }
+//     // aproximación de Stirling
+//     else {
+//         const pi = Math.PI;
+//         return Math.sqrt(2 * pi / x) * Math.pow(x / Math.E, x);
+//     }
+// }
 
 
