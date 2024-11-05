@@ -18,6 +18,10 @@ export class StddevComponent {
 
   calcular() {
     let array = convertirArray(this.numeros);
-    this.resultado = calculateStdDev(array);
+    if (array.includes(NaN) || array.length === 0) {
+      this.resultado = NaN;
+    } else {
+      this.resultado = calculateStdDev(array);
+    }
   }
 }

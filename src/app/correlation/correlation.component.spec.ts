@@ -86,3 +86,67 @@ describe("CorrelationComponent calcular", () => {
     expect(parseFloat(rr.toFixed(4))).toBe(0.9111);
   });
 });
+
+describe("CorrelationComponent calcular - Data_Test1", () => {
+  let component: CorrelationComponent;
+  let fixture: ComponentFixture<CorrelationComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [CorrelationComponent],
+    });
+    fixture = TestBed.createComponent(CorrelationComponent);
+    component = fixture.componentInstance;
+
+    component.numerosX = "130, 650, 99, 150, 128, 302, 95, 945, 368, 961";
+    component.numerosY = "186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601";
+  });
+
+  it("Should display the correct correlation results for Data_Test1 when button is clicked", () => {
+    const buttonElement: HTMLButtonElement = fixture.nativeElement.querySelector('.boton_calcular');
+    buttonElement.click();
+    fixture.detectChanges();
+
+    const respuestaR: HTMLElement = fixture.nativeElement.querySelector('.respuesta:nth-of-type(1)');
+    const respuestaRR: HTMLElement = fixture.nativeElement.querySelector('.respuesta:nth-of-type(2)');
+
+    const rValue = parseFloat(respuestaR.textContent ?? '0');
+    const rrValue = parseFloat(respuestaRR.textContent ?? '0');
+
+    expect(rValue).toBeCloseTo(0.9545, 4);
+    expect(rrValue).toBeCloseTo(0.9111, 4);
+  });
+});
+
+
+describe("CorrelationComponent calcular - Data_Test2", () => {
+  let component: CorrelationComponent;
+  let fixture: ComponentFixture<CorrelationComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [CorrelationComponent],
+    });
+    fixture = TestBed.createComponent(CorrelationComponent);
+    component = fixture.componentInstance;
+
+    component.numerosX = "130, 650, 99, 150, 128, 302, 95, 945, 368, 961";
+    component.numerosY = "15.0, 69.9, 6.5, 22.4, 28.4, 65.9, 19.4, 198.7, 38.8, 138.2";
+  });
+
+  it("Should display the correct correlation results for Data_Test2 when button is clicked", () => {
+    const buttonElement: HTMLButtonElement = fixture.nativeElement.querySelector('.boton_calcular');
+    buttonElement.click();
+    fixture.detectChanges();
+
+    const respuestaR: HTMLElement = fixture.nativeElement.querySelector('.respuesta:nth-of-type(1)');
+    const respuestaRR: HTMLElement = fixture.nativeElement.querySelector('.respuesta:nth-of-type(2)');
+
+    const rValue = parseFloat(respuestaR.textContent ?? '0');
+    const rrValue = parseFloat(respuestaRR.textContent ?? '0');
+
+    expect(rValue).toBeCloseTo(0.9333, 4);
+    expect(rrValue).toBeCloseTo(0.8711, 4);
+  });
+});
+
