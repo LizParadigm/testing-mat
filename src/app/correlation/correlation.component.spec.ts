@@ -60,3 +60,29 @@ describe("CorrelationComponent data_test4", () => {
     expect(parseFloat(rr.toFixed(4))).toBe(0.8988);
   });
 });
+
+
+describe("CorrelationComponent calcular", () => {
+  let component: CorrelationComponent;
+  let fixture: ComponentFixture<CorrelationComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [CorrelationComponent],
+    });
+    fixture = TestBed.createComponent(CorrelationComponent);
+    component = fixture.componentInstance;
+
+
+    component.numerosX = "130, 650, 99, 150, 128, 302, 95, 945, 368, 961";
+    component.numerosY = "186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601";
+  });
+
+  it("Should calculate correlation and set resultado correctly", () => {
+    component.calcular();
+    const { r, rr } = component.resultado;
+
+    expect(parseFloat(r.toFixed(4))).toBe(0.9545);
+    expect(parseFloat(rr.toFixed(4))).toBe(0.9111);
+  });
+});

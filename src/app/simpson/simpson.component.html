@@ -1,1 +1,18 @@
-<p>simpson works!</p>
+<div class="componente_contenido">
+    <h3>simpson</h3>
+    <div class="zona_input_1  modificacion_1">
+        <input type="text" class="input_generico c" [(ngModel)]="x0" placeholder="Valor inicial">
+        <input type="text" class="input_generico c" [(ngModel)]="x1" placeholder="valor final">
+        <input type="text" class="input_generico c" [(ngModel)]="numSeg" placeholder="numero de segmentos">
+        <input type="text" class="input_generico c" [(ngModel)]="error" placeholder="Error tolerado">
+        <select [(ngModel)]="funcion" class="input_generico c">
+            <option value="twoX">twoX</option>
+            <option value="x2">x2</option>
+            <option value="oneOverX">oneOverX</option>
+        </select>
+    </div>
+    <div>
+        <button class="boton_calcular" (click)="calcular()">Calcular</button>
+    </div>
+    <div class="respuesta">{{resultado}}</div>
+</div>

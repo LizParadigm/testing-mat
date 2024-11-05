@@ -1,0 +1,14 @@
+.modificacion_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.modificacion_2 {
+    margin: 1px 2px;
+}
+
+.linear_regression_comodin_blanco {
+    height: 5px;
+}

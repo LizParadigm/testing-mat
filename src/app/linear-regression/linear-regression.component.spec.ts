@@ -78,3 +78,36 @@ describe("Linear regresion test suite using data_test4", () => {
     expect(parseFloat(yk.toFixed(4))).toBe(49.4994);
   });
 });
+
+describe("LinearRegressionComponent calcular", () => {
+  let component: LinearRegressionComponent;
+  let fixture: ComponentFixture<LinearRegressionComponent>;
+
+  beforeEach(() => {
+    TestBed.configureTestingModule({
+      imports: [LinearRegressionComponent], // Cambia esto a imports
+    });
+    fixture = TestBed.createComponent(LinearRegressionComponent);
+    component = fixture.componentInstance;
+
+    // Asigna valores a numerosX y numerosY para probar
+    component.numerosX = "130, 650, 99, 150, 128, 302, 95, 945, 368, 961";
+    component.numerosY = "186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601";
+  });
+
+  it("Should calculate linear regression and set resultado1 correctly", () => {
+    component.calcularRegression(); // Llama a la función a probar
+    const { B0, B1 } = component.resultado1; // Accede al resultado después del cálculo
+
+    // Verifica los valores de B0 y B1
+    expect(parseFloat(B0.toFixed(2))).toBe(-22.55);
+    expect(parseFloat(B1.toFixed(4))).toBe(1.7279);
+  });
+
+  it("Should calculate prediction and set resultado2 correctly", () => {
+    component.calcularRegression(); // Asegúrate de que el cálculo de regresión se haya realizado
+    component.numeroX = x; // Asigna un valor a numeroX
+    component.calcularPredict(); // Llama a la función para calcular la predicción
+    expect(parseFloat(component.resultado2.toFixed(3))).toBe(644.429);
+  });
+});

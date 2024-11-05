@@ -1,0 +1,25 @@
+.app_menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    margin: 0px;
+    flex-wrap: wrap;
+}
+
+.app_menu_item {
+    border-radius: 8px;
+    background: #cd93cc;
+    padding: 4px;
+    margin: 5px 0px;
+}
+
+.app_vista {
+    margin: 5px;
+
+    border-radius: 23px;
+    padding: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

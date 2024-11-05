@@ -1,0 +1,10 @@
+<div class="componente_contenido">
+    <h3>Media</h3>
+    <div class="zona_input_1">
+        <input type="text" class="input_generico" [(ngModel)]="numeros" placeholder="Ej: 1, 2, 3, 4, 5, ...">
+    </div>
+    <div>
+        <button (click)="calcular()" class="boton_calcular">Calcular Media</button>
+    </div>
+    <div class="respuesta" *ngIf="resultado">{{resultado}}</div>
+</div>

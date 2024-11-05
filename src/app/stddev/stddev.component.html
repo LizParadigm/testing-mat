@@ -1,0 +1,10 @@
+<div class="componente_contenido">
+    <h3>desviacion estandar</h3>
+    <div class="zona_input_1">
+        <input type="text" class="input_generico" [(ngModel)]="numeros" placeholder="Ej:160,591,114,229,270,...">
+    </div>
+    <div>
+        <button (click)="calcular()" class="boton_calcular">Calcular</button>
+    </div>
+    <div class="respuesta" *ngIf="resultado">{{resultado}}</div>
+</div>

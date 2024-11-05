@@ -49,9 +49,22 @@ export function oneOverX(x: number): number {
 //         }
 //         return result;
 //     }
-//     // aproximación de Stirling
 //     else {
 //         const pi = Math.PI;
+//         if (x < 1) {
+//             return Math.sqrt(pi / x) * Math.pow(x / Math.E, x);
+//         }
 //         return Math.sqrt(2 * pi / x) * Math.pow(x / Math.E, x);
 //     }
+// }
+
+// function tDistribution(x: number, dof: number): number {
+//     const gammaDofPlus1 = gamma((dof + 1) / 2);
+//     const gammaDofOver2 = gamma(dof / 2);
+//     const coefficient = gammaDofPlus1 / (gammaDofOver2 * Math.sqrt(dof * Math.PI));
+
+//     const integral = simpson(0, x, 1000, t => 1 / Math.pow(1 + (t * t) / dof, (dof + 1) / 2));
+
+//     // F(x)
+//     return 0.5 + (coefficient * integral);
 // }
